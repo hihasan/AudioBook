@@ -28,11 +28,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.fragment.app.Fragment
 import androidx.room.Room
-import com.appnap.majhi.customer.utils.CustomLoadingDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.hihasan.audioboo.R
 import com.hihasan.audioboo.constants.DatabaseConstants
 import com.hihasan.audioboo.listeners.DialogActionListener
+import com.hihasan.audioboo.utils.CustomLoadingDialog
 import com.hihasan.audioboo.utils.DialogUtil
 import com.hihasan.audioboo.utils.LocaleContextWrapper
 import com.hihasan.audioboo.utils.Singleton

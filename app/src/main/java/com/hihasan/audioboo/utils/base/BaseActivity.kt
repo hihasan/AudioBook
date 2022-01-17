@@ -24,11 +24,12 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.room.Room
-import com.appnap.majhi.customer.utils.CustomLoadingDialog
+
 import com.hihasan.audioboo.R
 import com.hihasan.audioboo.constants.DatabaseConstants
 import com.hihasan.audioboo.listeners.DialogActionListener
 import com.hihasan.audioboo.utils.App
+import com.hihasan.audioboo.utils.CustomLoadingDialog
 import com.hihasan.audioboo.utils.DialogUtil
 import com.hihasan.audioboo.utils.LocaleContextWrapper
 import com.hihasan.audioboo.views.MainActivity
