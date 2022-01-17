@@ -7,4 +7,51 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#3A86FF</color>
+    <color name="colorSecondary">#272F46</color>
+    <color name="colorAccent">#FF9300</color>
+    <color name="colorFeature">#FF5A5E</color>
+
+    <color name="colorInfo">#3E89EE</color>
+    <color name="colorSuccess">#2DC06B</color>
+    <color name="colorWarning">#F1C732</color>
+    <color name="colorError">#F13939</color>
+    <color name="colorRed">#EE5153</color>
+    <color name="colorPublic">#FF9300</color>
+    <color name="zoomDotIndicatorColor">#743A86FF</color>
+
+    <color name="black2">#1D1D1D</color>
+    <color name="grey1">#333333</color>
+    <color name="grey2">#777777</color>
+    <color name="grey3">#A6A6A6</color>
+    <color name="grey4">#A6A6A6</color>
+    <color name="grey5">#E0E0E0</color>
+    <color name="grey6">#707070</color>
+    <color name="grey7">#F8F8F8</color>
+    <color name="background">#FFFFFF</color>
+    <color name="shadowColor">#0000000D</color>
+    <color name="cardBorderColor">#D8D8D8</color>
+    <color name="productCardBorderColor">#E7ECEE</color>
+    <color name="quantityColor">#7A7E93</color>
+    <color name="salePriceColor">#808080</color>
+    <color name="transparent">#00000000</color>
+    <color name="border_color">#E0E0E0</color>
+    <color name="bottomInactive">#888888</color>
+    <color name="blue_grey">#EBF3FF</color>
+    <color name="pendingColor">#FFEED7</color>
+    <color name="pendingTextColor">#FF9300</color>
+    <color name="cancelColor">#FCE4E4</color>
+    <color name="cancelTextColor">#EE5153</color>
+    <color name="acceptedColor">#FFE0FB</color>
+    <color name="acceptedTextColor">#FF3AE8</color>
+    <color name="shippedColor">#DEF5E8</color>
+    <color name="shippedTextColor">#2DC06B</color>
+    <color name="pickedColor">#FCE4E4</color>
+    <color name="pickedTextColor">#16C107</color>
+    <color name="instoreColor">#EFF2D8</color>
+    <color name="instoreTextColor">#97AA04</color>
+    <color name="deliveredColor">#F1E3FD</color>
+    <color name="deliveredTextColor">#A84DF5</color>
+
 </resources>
