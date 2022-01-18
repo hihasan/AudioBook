@@ -13,4 +13,9 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="home_fragment">Home Fragment</string>
+
+    <!--Permission String-->
+    <string name="android_permission_alert_dialog_title">App permissions must needed</string>
+    <string name="android_permission_denied_msg">App permissions denied! Your app will not work properly. Please allow this permission from app settings</string>
+    <string name="android_permission_goto_app_settings_text">Goto App Settings</string>
 </resources>
