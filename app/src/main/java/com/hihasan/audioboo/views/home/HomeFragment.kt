@@ -32,6 +32,7 @@ class HomeFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         homeUseCase.initListeners(binding.tabView, binding.viewpager, lifecycle, childFragmentManager)
+        homeUseCase.getPdfList(activity!!.applicationContext)
 
     }
 
