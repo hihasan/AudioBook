@@ -268,4 +268,10 @@
         <item name="android:fontFamily">@font/roboto_light</item>
         <item name="android:textColor">@color/bottomInactive</item>
     </style>
+
+    <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>
