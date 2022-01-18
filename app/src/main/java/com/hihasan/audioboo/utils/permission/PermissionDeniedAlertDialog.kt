@@ -10,7 +10,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.hihasan.audioboo.R
 import java.lang.ref.WeakReference
 
-class PermissionDeniedAlertDialog(private val activity: WeakReference<Activity?>) {
+class PermissionDeniedAlertDialog(private val activity: WeakReference<Activity>) {
     @SuppressLint("StringFormatInvalid")
     fun displayAlertForAccessLocationPermissionNotFound() {
         if (activity.get() == null) return

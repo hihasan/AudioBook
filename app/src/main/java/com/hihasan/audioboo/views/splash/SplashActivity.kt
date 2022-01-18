@@ -7,6 +7,7 @@ import com.hihasan.audioboo.R
 import com.hihasan.audioboo.constants.ApplicationConstants
 import com.hihasan.audioboo.databinding.ActivitySplashBinding
 import com.hihasan.audioboo.utils.base.BaseActivity
+import com.hihasan.audioboo.views.IntroActivity
 import com.hihasan.audioboo.views.MainActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -27,7 +28,7 @@ class SplashActivity : BaseActivity() {
     private fun waitScreen(){
         CoroutineScope(Dispatchers.Main).launch {
             delay(ApplicationConstants.APP_LOAD_TIME)
-            val intent = Intent(this@SplashActivity, MainActivity::class.java)
+            val intent = Intent(this@SplashActivity, IntroActivity::class.java)
             startActivity(intent)
         }
     }

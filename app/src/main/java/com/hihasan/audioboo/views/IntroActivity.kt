@@ -1,6 +1,7 @@
 package com.hihasan.audioboo.views
 
 import android.app.Activity
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.opengl.Visibility
 import android.os.Build
@@ -64,16 +65,18 @@ class IntroActivity : AppIntro() {
     override fun onDonePressed(currentFragment: Fragment?) {
         super.onDonePressed(currentFragment)
         // Decide what to do when the user clicks on "Done"
-        Toast.makeText(applicationContext, "Test ", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this@IntroActivity, MainActivity::class.java)
+        startActivity(intent)
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.R)
     private fun checkForRuntimePermissions() {
-        RunTimePermissions(WeakReference<Activity>(activity)).checkForPermissions()
+        RunTimePermissions(WeakReference<Activity>(this)).checkForPermissions()
     }
 
     private fun displayAlertToAllowAccessLocationPermissionFromAppSettings() {
-        PermissionDeniedAlertDialog(WeakReference<Activity>(activity)).displayAlertForAccessLocationPermissionNotFound()
+        PermissionDeniedAlertDialog(WeakReference<Activity>(this)).displayAlertForAccessLocationPermissionNotFound()
     }
 
     override fun onRequestPermissionsResult(
