@@ -11,13 +11,20 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.room.Room
 
 import com.github.paolorotolo.appintro.AppIntro
 import com.github.paolorotolo.appintro.AppIntroFragment
 import com.hihasan.audioboo.R
 import com.hihasan.audioboo.constants.ApplicationConstants
+import com.hihasan.audioboo.constants.DatabaseConstants
+import com.hihasan.audioboo.entity.PermissionEntity
+import com.hihasan.audioboo.utils.base.BaseDatabase
 import com.hihasan.audioboo.utils.permission.PermissionDeniedAlertDialog
 import com.hihasan.audioboo.utils.permission.RunTimePermissions
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.launch
 import java.lang.ref.WeakReference
 
 
@@ -65,6 +72,18 @@ class IntroActivity : AppIntro() {
     override fun onDonePressed(currentFragment: Fragment?) {
         super.onDonePressed(currentFragment)
         // Decide what to do when the user clicks on "Done"
+
+        var database = let {
+            Room.databaseBuilder(it, BaseDatabase::class.java, DatabaseConstants.DATABASE_NAME)
+                .allowMainThreadQueries()
+                .build()
+        }
+        val permissionEntity = PermissionEntity(0, 1)
+        CoroutineScope(Main).launch {
+            database.permissionDao.insert(permissionEntity)
+        }
+
+
         val intent = Intent(this@IntroActivity, MainActivity::class.java)
         startActivity(intent)
     }

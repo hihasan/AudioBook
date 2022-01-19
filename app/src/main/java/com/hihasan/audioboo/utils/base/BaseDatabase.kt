@@ -5,19 +5,19 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.hihasan.audioboo.constants.DatabaseConstants
-import com.hihasan.audioboo.dao.TestDao
-import com.hihasan.audioboo.entity.TestEntity
+import com.hihasan.audioboo.dao.PermissionDao
+import com.hihasan.audioboo.entity.PermissionEntity
 
 
 @Database(
     entities = [
-        TestEntity::class
-        ],
+        PermissionEntity::class
+    ],
     version = DatabaseConstants.DATABASE_VERSION,
 )
 abstract class BaseDatabase : RoomDatabase() {
 
-    abstract val testDao : TestDao
+    abstract val permissionDao : PermissionDao
 
     companion object {
         private var INSTANCE: BaseDatabase? = null

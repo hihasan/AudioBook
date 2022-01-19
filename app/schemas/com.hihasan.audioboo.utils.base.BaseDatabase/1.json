@@ -2,15 +2,21 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "5451c27b50a62c07378f53fa2b6829eb",
+    "identityHash": "49829aaf2d8d0e8981bbc487ea22f7a1",
     "entities": [
       {
-        "tableName": "tbl_test",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)",
+        "tableName": "tbl_permission",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `status` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
             "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
             "affinity": "INTEGER",
             "notNull": true
           }
@@ -28,7 +34,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '5451c27b50a62c07378f53fa2b6829eb')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '49829aaf2d8d0e8981bbc487ea22f7a1')"
     ]
   }
 }

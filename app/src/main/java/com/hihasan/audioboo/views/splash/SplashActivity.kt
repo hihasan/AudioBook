@@ -28,7 +28,13 @@ class SplashActivity : BaseActivity() {
     private fun waitScreen(){
         CoroutineScope(Dispatchers.Main).launch {
             delay(ApplicationConstants.APP_LOAD_TIME)
-            val intent = Intent(this@SplashActivity, IntroActivity::class.java)
+            val intent: Intent
+            if (database!!.permissionDao.getStatus().isNotEmpty()){
+                intent = Intent(this@SplashActivity, MainActivity::class.java)
+            } else {
+                intent = Intent(this@SplashActivity, IntroActivity::class.java)
+            }
+
             startActivity(intent)
         }
     }
