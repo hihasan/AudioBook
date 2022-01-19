@@ -1,11 +1,17 @@
 package com.hihasan.audioboo.views.home
 
 import android.os.Bundle
+import android.util.Log
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.widget.PopupMenu
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import com.appnap.majhi.customer.utils.base.BaseFragment
+import com.hihasan.audioboo.R
 import com.hihasan.audioboo.databinding.FragmentHomeBinding
 import com.hihasan.audioboo.factory.HomeViewModelFactory
 
@@ -34,7 +40,14 @@ class HomeFragment : BaseFragment() {
         homeUseCase.initListeners(binding.tabView, binding.viewpager, lifecycle, childFragmentManager)
         homeUseCase.getPdfList(activity!!.applicationContext)
 
+        binding.icAdd.setOnClickListener {
+            homeUseCase.onMoreButtonClick(binding.icAdd, requireContext())
+        }
+
     }
+
+
+
 
 
 

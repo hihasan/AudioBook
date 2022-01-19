@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/pdf_to_audio"
+        android:title="@string/convert_pdf_to_audio"
+        android:icon="@drawable/ic_baseline_audiotrack_24"/>
+
+    <item
+        android:id="@+id/image_to_audio"
+        android:title="@string/convert_image_to_audio"
+        android:icon="@drawable/ic_baseline_camera_alt_24"/>
+
+</menu>

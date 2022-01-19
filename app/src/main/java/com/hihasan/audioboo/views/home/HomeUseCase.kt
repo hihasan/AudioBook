@@ -6,12 +6,17 @@ import android.net.Uri
 import android.os.Build
 import android.provider.MediaStore
 import android.util.Log
+import android.view.Gravity
+import android.view.View
 import android.webkit.MimeTypeMap
+import android.widget.Toast
+import androidx.appcompat.widget.PopupMenu
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import com.hihasan.audioboo.R
 import com.hihasan.audioboo.adapter.ViewPagerAdapter
 
 
@@ -40,6 +45,41 @@ class HomeUseCase {
             }
 
         })
+    }
+
+    fun onMoreButtonClick(view: View, context: Context) {
+        val popupMenu = PopupMenu(context, view)
+
+        popupMenu.inflate(R.menu.menu_choose_converter)
+        popupMenu.gravity = Gravity.END
+        try {
+            val fieldMPopup = PopupMenu::class.java.getDeclaredField("mPopup")
+            fieldMPopup.isAccessible = true
+            val mPopup = fieldMPopup.get(popupMenu)
+            mPopup.javaClass
+                .getDeclaredMethod("setForceShowIcon", Boolean::class.java)
+                .invoke(mPopup, true)
+        } catch (e: Exception){
+            Log.e("Main", "Error showing menu icons.", e)
+        } finally {
+            popupMenu.show()
+        }
+
+
+        popupMenu.setOnMenuItemClickListener { item ->
+            when(item.itemId){
+                R.id.pdf_to_audio ->{
+                    Toast.makeText(context, "PDF TO AUDIO", Toast.LENGTH_SHORT).show()
+                }
+                R.id.image_to_audio ->{
+                    Toast.makeText(context, "IMAGE TO AUDIO", Toast.LENGTH_SHORT).show()
+                }
+
+            }
+            true
+        }
+
+        // popupMenu?.show()
     }
 
     fun getPdfList(context: Context): ArrayList<String>? {

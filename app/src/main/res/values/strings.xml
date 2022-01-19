@@ -18,4 +18,6 @@
     <string name="android_permission_alert_dialog_title">App permissions must needed</string>
     <string name="android_permission_denied_msg">App permissions denied! Your app will not work properly. Please allow this permission from app settings</string>
     <string name="android_permission_goto_app_settings_text">Goto App Settings</string>
+    <string name="convert_pdf_to_audio">Convert Pdf To Audio</string>
+    <string name="convert_image_to_audio">Convert Image To Audio</string>
 </resources>
