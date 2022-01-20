@@ -2,6 +2,7 @@ package com.hihasan.audioboo.views.home
 
 
 import android.content.Context
+import android.graphics.Color
 import android.net.Uri
 import android.os.Build
 import android.provider.MediaStore
