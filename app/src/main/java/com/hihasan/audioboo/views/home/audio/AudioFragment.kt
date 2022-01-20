@@ -1,0 +1,33 @@
+package com.hihasan.audioboo.views.home.audio
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Toast
+import com.appnap.majhi.customer.utils.base.BaseFragment
+import com.hihasan.audioboo.databinding.FragmentAudioBinding
+
+class AudioFragment : BaseFragment() {
+
+    private lateinit var binding : FragmentAudioBinding
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding = FragmentAudioBinding.inflate(inflater, container, false)
+
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.noContentFound.setOnClickListener {
+            Toast.makeText(requireContext(), "Need to Develop", Toast.LENGTH_SHORT).show()
+        }
+
+    }
+}

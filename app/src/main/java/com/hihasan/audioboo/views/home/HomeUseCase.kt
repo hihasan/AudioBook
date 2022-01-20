@@ -101,9 +101,10 @@ class HomeUseCase {
         })
     }
 
-    fun searchListener(search : SearchView, toolbarTitle: AppCompatTextView, icAdd : AppCompatImageView){
+    fun searchListener(search : SearchView, toolbarTitle: AppCompatTextView, toolbarIcon : AppCompatImageView,  icAdd : AppCompatImageView){
         search.setOnCloseListener {
             toolbarTitle.visibility = View.VISIBLE
+            toolbarIcon.visibility = View.VISIBLE
             icAdd.visibility = View.VISIBLE
 
             val params: RelativeLayout.LayoutParams =
@@ -116,9 +117,10 @@ class HomeUseCase {
         }
     }
 
-    fun searchCloseListeners(search : SearchView, toolbarTitle: AppCompatTextView, icAdd : AppCompatImageView){
+    fun searchCloseListeners(search : SearchView, toolbarTitle: AppCompatTextView, toolbarIcon : AppCompatImageView,  icAdd : AppCompatImageView){
         search.setOnSearchClickListener {
             toolbarTitle.visibility = View.GONE
+            toolbarIcon.visibility = View.GONE
             icAdd.visibility = View.GONE
 
             val params: RelativeLayout.LayoutParams =

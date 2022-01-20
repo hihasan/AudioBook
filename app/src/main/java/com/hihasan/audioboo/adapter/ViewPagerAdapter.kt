@@ -7,6 +7,8 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.paging.Pager
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.hihasan.audioboo.views.home.audio.AudioFragment
+import com.hihasan.audioboo.views.home.pdf.PdfFragment
 
 class ViewPagerAdapter (fragmentManager: FragmentManager, lifecycle: Lifecycle, private val titleList: List<String>, private val type: Int) :
     FragmentStateAdapter(fragmentManager, lifecycle) {
@@ -17,11 +19,11 @@ class ViewPagerAdapter (fragmentManager: FragmentManager, lifecycle: Lifecycle, 
 
     override fun createFragment(position: Int): Fragment {
         when(position){
-            0 -> return TestFragment()
-            1 -> return TestFragment1()
+            0 -> return AudioFragment()
+            1 -> return PdfFragment()
         }
 
-        return TestFragment()
+        return AudioFragment()
     }
 
 //    override fun createFragment(position: Int): Fragment {

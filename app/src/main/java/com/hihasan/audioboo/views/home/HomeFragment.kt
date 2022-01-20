@@ -45,8 +45,8 @@ class HomeFragment : BaseFragment() {
         )
         homeUseCase.getPdfList(activity!!.applicationContext)
         homeUseCase.searchQuery(binding.icSearch)
-        homeUseCase.searchListener(binding.icSearch, binding.appName, binding.icAdd)
-        homeUseCase.searchCloseListeners(binding.icSearch, binding.appName, binding.icAdd)
+        homeUseCase.searchListener(binding.icSearch, binding.appName, binding.appIco, binding.icAdd)
+        homeUseCase.searchCloseListeners(binding.icSearch, binding.appName, binding.appIco, binding.icAdd)
         binding.icAdd.setOnClickListener {
             homeUseCase.onMoreButtonClick(binding.icAdd, requireContext())
         }

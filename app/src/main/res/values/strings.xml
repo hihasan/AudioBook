@@ -20,4 +20,5 @@
     <string name="android_permission_goto_app_settings_text">Goto App Settings</string>
     <string name="convert_pdf_to_audio">Convert Pdf To Audio</string>
     <string name="convert_image_to_audio">Convert Image To Audio</string>
+    <string name="create_audio_book">Create Audio Book</string>
 </resources>
