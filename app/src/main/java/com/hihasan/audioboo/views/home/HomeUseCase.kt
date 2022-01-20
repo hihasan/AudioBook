@@ -9,8 +9,13 @@ import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.webkit.MimeTypeMap
+import android.widget.RelativeLayout
 import android.widget.Toast
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.appcompat.widget.PopupMenu
+import androidx.appcompat.widget.SearchView
+import androidx.core.view.isVisible
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.widget.ViewPager2
@@ -80,6 +85,49 @@ class HomeUseCase {
         }
 
         // popupMenu?.show()
+    }
+
+    fun searchQuery(search : SearchView){
+        search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return false
+            }
+
+        })
+    }
+
+    fun searchListener(search : SearchView, toolbarTitle: AppCompatTextView, icAdd : AppCompatImageView){
+        search.setOnCloseListener {
+            toolbarTitle.visibility = View.VISIBLE
+            icAdd.visibility = View.VISIBLE
+
+            val params: RelativeLayout.LayoutParams =
+                search.layoutParams as RelativeLayout.LayoutParams
+            params.width = RelativeLayout.LayoutParams.WRAP_CONTENT
+            search.layoutParams = params
+            search.requestLayout()
+
+            false
+        }
+    }
+
+    fun searchCloseListeners(search : SearchView, toolbarTitle: AppCompatTextView, icAdd : AppCompatImageView){
+        search.setOnSearchClickListener {
+            toolbarTitle.visibility = View.GONE
+            icAdd.visibility = View.GONE
+
+            val params: RelativeLayout.LayoutParams =
+                search.layoutParams as RelativeLayout.LayoutParams
+            params.width = RelativeLayout.LayoutParams.MATCH_PARENT
+            params.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE)
+            search.layoutParams = params
+            search.requestLayout()
+
+        }
     }
 
     fun getPdfList(context: Context): ArrayList<String>? {

@@ -37,19 +37,21 @@ class HomeFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        homeUseCase.initListeners(binding.tabView, binding.viewpager, lifecycle, childFragmentManager)
+        homeUseCase.initListeners(
+            binding.tabView,
+            binding.viewpager,
+            lifecycle,
+            childFragmentManager
+        )
         homeUseCase.getPdfList(activity!!.applicationContext)
-
+        homeUseCase.searchQuery(binding.icSearch)
+        homeUseCase.searchListener(binding.icSearch, binding.appName, binding.icAdd)
+        homeUseCase.searchCloseListeners(binding.icSearch, binding.appName, binding.icAdd)
         binding.icAdd.setOnClickListener {
             homeUseCase.onMoreButtonClick(binding.icAdd, requireContext())
         }
 
     }
-
-
-
-
-
 
 
 }
