@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/book_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/no_content_found"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="@dimen/_12sdp"-->
+<!--        android:layout_centerInParent="true">-->
+<!--        <androidx.appcompat.widget.AppCompatImageView-->
+<!--            android:id="@+id/no_content_found_iv"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:src="@drawable/ic_baseline_add_circle_24"/>-->
+<!--        <androidx.appcompat.widget.AppCompatTextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/create_audio_book"-->
+<!--            android:layout_below="@id/no_content_found_iv"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_marginTop="@dimen/_4sdp"-->
+<!--            android:background="?android:attr/selectableItemBackground"-->
+<!--            android:textColor="@color/ash_varient"/>-->
+<!--    </RelativeLayout>-->
+</RelativeLayout>
