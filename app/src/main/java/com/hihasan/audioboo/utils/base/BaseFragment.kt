@@ -39,6 +39,9 @@ import com.hihasan.audioboo.utils.Singleton
 import com.hihasan.audioboo.utils.base.BaseDatabase
 import java.io.ByteArrayOutputStream
 import java.io.File
+import java.text.DecimalFormat
+import kotlin.math.log10
+import kotlin.math.pow
 
 open class BaseFragment : Fragment() {
     //base of all fragment class
@@ -177,7 +180,12 @@ open class BaseFragment : Fragment() {
         }
     }
 
-    open fun reloadPage() {}
+    fun readAbleFormat(value: String): String {
+        if (value.toLong() <= 0 ) return "0"
+        val units = arrayOf("B", "kB", "MB", "GB", "TB")
+        val digitGroups = (log10(value.toLong().toDouble()) / log10(1024.0)).toInt()
+        return DecimalFormat("#,##0.#").format(value.toLong() / 1024.0.pow(digitGroups.toDouble())).toString() + " " + units[digitGroups]
+    }
 
     open fun showCustomDialog(title: String, activity: Activity?, dialogActionListener: DialogActionListener,
                               okBtnEnable: Boolean) {
@@ -385,4 +393,5 @@ open class BaseFragment : Fragment() {
     open fun isGooglePhotosUri(uri: Uri): Boolean {
         return "com.google.android.apps.photos.content" == uri.authority
     }
+
 }

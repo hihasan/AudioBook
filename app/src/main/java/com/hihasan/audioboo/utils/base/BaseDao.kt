@@ -11,6 +11,9 @@ interface BaseDao<T> {
     @Insert
     suspend fun insert(vararg obj : T)
 
+    @Insert
+    suspend fun insertList(obj: List<T>)
+
     @Update
     suspend fun update(obj: T)
 

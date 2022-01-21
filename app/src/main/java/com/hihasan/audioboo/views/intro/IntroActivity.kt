@@ -1,12 +1,10 @@
-package com.hihasan.audioboo.views
+package com.hihasan.audioboo.views.intro
 
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.opengl.Visibility
 import android.os.Build
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
@@ -22,6 +20,7 @@ import com.hihasan.audioboo.entity.PermissionEntity
 import com.hihasan.audioboo.utils.base.BaseDatabase
 import com.hihasan.audioboo.utils.permission.PermissionDeniedAlertDialog
 import com.hihasan.audioboo.utils.permission.RunTimePermissions
+import com.hihasan.audioboo.views.MainActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.launch
@@ -29,20 +28,14 @@ import java.lang.ref.WeakReference
 
 
 class IntroActivity : AppIntro() {
+
+    //val introUseCase = IntroUseCases(applicationContext)
+
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        if (RunTimePermissions(WeakReference<Activity>(activit)).isAllNecessaryPermissionGranted) {
-//
-//            phoneValidation(binding.mobileNoEdt.text.toString())
-//        } else {
-//            checkForRuntimePermissions()
-//        }
-
         checkForRuntimePermissions()
-
-
         skipButtonEnabled = false
 
         addSlide(

@@ -7,7 +7,7 @@ import com.hihasan.audioboo.R
 import com.hihasan.audioboo.constants.ApplicationConstants
 import com.hihasan.audioboo.databinding.ActivitySplashBinding
 import com.hihasan.audioboo.utils.base.BaseActivity
-import com.hihasan.audioboo.views.IntroActivity
+import com.hihasan.audioboo.views.intro.IntroActivity
 import com.hihasan.audioboo.views.MainActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

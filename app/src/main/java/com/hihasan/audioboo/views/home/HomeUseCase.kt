@@ -139,7 +139,9 @@ class HomeUseCase {
             MediaStore.Files.FileColumns.DISPLAY_NAME,
             MediaStore.Files.FileColumns.DATE_ADDED,
             MediaStore.Files.FileColumns.DATA,
-            MediaStore.Files.FileColumns.MIME_TYPE
+            MediaStore.Files.FileColumns.MIME_TYPE,
+            MediaStore.Files.FileColumns.SIZE,
+            MediaStore.Files.FileColumns.TITLE
         )
         val sortOrder = MediaStore.Files.FileColumns.DATE_ADDED + " DESC"
         val selection = MediaStore.Files.FileColumns.MIME_TYPE + " = ?"
@@ -157,9 +159,12 @@ class HomeUseCase {
                     val columnData: Int = cursor.getColumnIndex(MediaStore.Files.FileColumns.DATA)
                     val columnName: Int =
                         cursor.getColumnIndex(MediaStore.Files.FileColumns.DISPLAY_NAME)
+                    val pdfAdded : Int =
+                        cursor.getColumnIndex(MediaStore.Files.FileColumns.TITLE)
+
                     do {
                         pdfList.add(cursor.getString(columnData))
-                        Log.d("Use Case", "getPdf: " + cursor.getString(columnName))
+                        Log.d("Use Case", "getPdf: " + cursor.getString(pdfAdded))
                         //you can get your pdf files
                     } while (cursor.moveToNext())
                 }

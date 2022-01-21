@@ -32,7 +32,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".views.IntroActivity"
+        <activity android:name=".views.intro.IntroActivity"
             android:theme="@style/Theme.AudioBook.NoActionBar"/>
         <activity android:name=".views.MainActivity"
             android:theme="@style/Theme.AudioBook.NoActionBar"/>

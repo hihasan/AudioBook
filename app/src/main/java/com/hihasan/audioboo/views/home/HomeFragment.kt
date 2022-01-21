@@ -12,8 +12,15 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import com.appnap.majhi.customer.utils.base.BaseFragment
 import com.hihasan.audioboo.R
+import com.hihasan.audioboo.constants.ApplicationConstants
 import com.hihasan.audioboo.databinding.FragmentHomeBinding
 import com.hihasan.audioboo.factory.HomeViewModelFactory
+import com.hihasan.audioboo.utils.CustomLoadingDialog
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.async
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class HomeFragment : BaseFragment() {
 
@@ -49,6 +56,22 @@ class HomeFragment : BaseFragment() {
         homeUseCase.searchCloseListeners(binding.icSearch, binding.appName, binding.appIco, binding.icAdd)
         binding.icAdd.setOnClickListener {
             homeUseCase.onMoreButtonClick(binding.icAdd, requireContext())
+        }
+
+        if(database!!.pdfListDao.getPdfList().isEmpty()){
+            val customLoadingDialog = CustomLoadingDialog(requireContext(), "")
+            customLoadingDialog.show()
+            CoroutineScope(Main).launch {
+                async {
+                    viewModel.getPdfList(requireContext())
+                }.await()
+
+                async {
+                    delay(ApplicationConstants.APP_LOAD_TIME)
+                    customLoadingDialog.dismiss()
+                }
+            }
+
         }
 
     }

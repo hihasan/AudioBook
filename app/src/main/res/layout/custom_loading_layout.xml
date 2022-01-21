@@ -1,43 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="@dimen/_35sdp"
     android:layout_width="@dimen/_256sdp"
     android:layout_height="@dimen/_156sdp"
-    app:cardElevation="@dimen/_10sdp"
-    app:cardCornerRadius="@dimen/_5sdp">
+    android:padding="@dimen/_35sdp"
+    app:cardCornerRadius="@dimen/_5sdp"
+    app:cardElevation="@dimen/_10sdp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="@dimen/_4sdp">
-
-        <!--        <com.airbnb.lottie.LottieAnimationView-->
-        <!--            android:id="@+id/animationView"-->
-        <!--            android:layout_width="@dimen/_128sdp"-->
-        <!--            android:layout_height="@dimen/_108sdp"-->
-        <!--            app:lottie_rawRes="@raw/loading"-->
-        <!--            android:layout_marginTop="@dimen/_8sdp"-->
-        <!--            app:lottie_autoPlay="true"-->
-        <!--            app:lottie_loop="true"-->
-        <!--            android:layout_centerHorizontal="true"/>-->
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_36sdp"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="@dimen/_8sdp"
-            android:text="Please wait"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/_21ssp" />
+            android:layout_marginTop="@dimen/_8sdp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/cat_loader" />
     </RelativeLayout>
-
-
-
-
-</com.google.android.material.card.MaterialCardView>
+</androidx.cardview.widget.CardView>
 
 
     <!--    android:layout_below="@id/animationView"-->
