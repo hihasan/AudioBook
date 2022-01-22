@@ -7,10 +7,16 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.appnap.majhi.customer.utils.base.BaseFragment
+import com.hihasan.audioboo.constants.ApplicationConstants
 import com.hihasan.audioboo.databinding.FragmentPdfBinding
 import com.hihasan.audioboo.databinding.FragmentPdfListSingleBinding
 import com.hihasan.audioboo.entity.PdfListEntity
 import com.hihasan.audioboo.utils.BaseAdapter
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class PdfFragment : BaseFragment(), BaseAdapter.BaseAdapterListener {
     private lateinit var binding : FragmentPdfBinding
@@ -26,9 +32,16 @@ class PdfFragment : BaseFragment(), BaseAdapter.BaseAdapterListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        pdfList = database
-        pdfUseCase.setRecyclerView(requireContext(), database!!.pdfListDao.getPdfList(), binding.bookRv, this)
+        CoroutineScope(Main).launch {
+            delay(ApplicationConstants.APP_LOAD_TIME)
+            rvSet()
+        }
 
+
+    }
+
+    fun rvSet(){
+        pdfUseCase.setRecyclerView(requireContext(), database!!.pdfListDao.getPdfList(), binding.bookRv, this)
     }
 
     override fun onBind(holder: BaseAdapter.DataBindingViewHolder, position: Int, item: Any?, layoutId: Int, ) {
